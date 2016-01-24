@@ -23,16 +23,19 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.example.constant.EvaluateTextConstant;
+import com.example.service.EvaluateTextServiceImpl;
 /**
  * @author Priyadarshan
  *
  */
 public class EvaluateTextUtil {
 	
+	private static final Logger	logger	= Logger.getLogger(EvaluateTextUtil.class);	
 	private static Map<String,Integer> task1Map = new HashMap<> ();
 	private static Map<Integer,List<String>> task2Map = new TreeMap<>(Collections.reverseOrder());
 	
@@ -42,6 +45,7 @@ public class EvaluateTextUtil {
 	}
 		
 	public static String readFileAsString(){
+		logger.info("EvaluateTextUtil::readFileAsString(): Entry");
 		String myFileStr = null ;
 		Resource resource = new ClassPathResource(EvaluateTextConstant.FILE_NAME);		
 		File file;
@@ -50,22 +54,26 @@ public class EvaluateTextUtil {
 			myFileStr = FileUtils.readFileToString(file);
 			myFileStr = StringUtils.replaceEach(myFileStr, new String[]{",",".",";"}, new String[]{"","",""});
 		} catch (IOException e) {
-			System.err.println(e);
+			logger.error("IOException occured when reading file name: "+e);
 		}
+		logger.info("EvaluateTextUtil::readFileAsString(): Exit");
 		return myFileStr;
 	}
 
 	public static Set<String> getUniqueTokenSet(String myFileStr){
+		logger.info("EvaluateTextUtil::getUniqueTokenSet(): Entry");
 		Set<String> tokenSet = new TreeSet<>();
 		Scanner scanner = new Scanner(myFileStr);
 		while(scanner.hasNext()){
 			tokenSet.add(scanner.next());
 		}
 		scanner.close();
+		logger.info("EvaluateTextUtil::getUniqueTokenSet(): Exit");
 		return tokenSet;
 	}
 
 	private static void buildTask1Map(){
+		logger.info("EvaluateTextUtil::buildTask1Map(): Entry");
 		String myFileStr = readFileAsString();
 		Set<String> tokenSet = getUniqueTokenSet (myFileStr);
 		for(String token:tokenSet){
@@ -77,9 +85,11 @@ public class EvaluateTextUtil {
 			}
 			task1Map.put(token, cnt);
 		}
+		logger.info("EvaluateTextUtil::buildTask1Map(): Exit");
 	}
 	
 	private static void buildTask2Map(){
+		logger.info("EvaluateTextUtil::buildTask2Map(): Entry");
 		for (Map.Entry<String, Integer> entry : task1Map.entrySet()) {
 			String key = entry.getKey();
 		    Integer value = entry.getValue();
@@ -92,7 +102,8 @@ public class EvaluateTextUtil {
 		    	tokenList.add(key);
 		    	task2Map.put(value, tokenList);
 		    }
-		}		
+		}
+		logger.info("EvaluateTextUtil::buildTask2Map(): Exit");
 	}
 	
 	public static Map<String,Integer> getTask1Map() {

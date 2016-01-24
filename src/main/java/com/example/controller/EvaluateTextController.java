@@ -4,11 +4,10 @@
 package com.example.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -31,29 +30,27 @@ import com.example.service.EvaluateTextService;
 @Controller
 public class EvaluateTextController {
 	
+	private static final Logger	logger	= Logger.getLogger(EvaluateTextController.class);
+	
 	@Autowired
 	EvaluateTextService evaluateTextService;
 	
 	@RequestMapping(value="/search", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody TextSearchResult searchText(@RequestBody TextSearchRequest textSearchRequest){
-		
-		TextSearchResult textSearchResult = evaluateTextService.searchText(textSearchRequest.getSearchText());		
+		logger.info("EvaluateTextController::searchText(): Entry");
+		TextSearchResult textSearchResult = evaluateTextService.searchText(textSearchRequest.getSearchText());
+		logger.info("EvaluateTextController::searchText(): Exit");
 		return textSearchResult;
 	}
 
 	@RequestMapping(value="/top/{searchCnt}", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody void topSearchText(@PathVariable Integer searchCnt, HttpServletResponse httpServletResponse) throws IOException{
 		TopSearchResult topSearchResult = evaluateTextService.searchTopText(searchCnt);
-		
+		logger.info("EvaluateTextController::topSearchText(): Entry");		
 		httpServletResponse.setContentType("text/csv");
+		logger.info("EvaluateTextController::topSearchText(): Exit");
 		httpServletResponse.getWriter().write(topSearchResult.getTopSearchMap().toString());
 	}
-
-	@RequestMapping(value="/hello", method=RequestMethod.GET)	
-	public @ResponseBody String sayHello() {
-		return "Hello World";
-	}
-	
 
 }
  

@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.example.model.TextSearchResult;
@@ -23,9 +24,12 @@ import com.example.util.EvaluateTextUtil;
 
 @Service("evaluateTextService")
 public class EvaluateTextServiceImpl implements EvaluateTextService {
+	
+	private static final Logger	logger	= Logger.getLogger(EvaluateTextServiceImpl.class);
 
 	@Override
 	public TextSearchResult searchText(List<String> searchWords) {
+		logger.info("EvaluateTextServiceImpl::searchText(): Entry");
 		TextSearchResult textSearchResult = new TextSearchResult();
 		List<Map<String,Integer>> list = new ArrayList<>();
 		for(String searchWord:searchWords){
@@ -38,11 +42,13 @@ public class EvaluateTextServiceImpl implements EvaluateTextService {
 			list.add(map);
 		}
 		textSearchResult.setCounts(list);
+		logger.info("EvaluateTextServiceImpl::searchText(): Exit");
 		return textSearchResult;
 	}
 
 	@Override
 	public TopSearchResult searchTopText(int searchCnt) {
+		logger.info("EvaluateTextServiceImpl::searchTopText(): Entry");
 		TopSearchResult topSearchResult = new TopSearchResult();
 		Map<Integer, List<String>> topSearchMap = new TreeMap<>(Collections.reverseOrder());
 		for (Map.Entry<Integer, List<String>> entry : EvaluateTextUtil.getTask2Map().entrySet()) {
@@ -54,6 +60,7 @@ public class EvaluateTextServiceImpl implements EvaluateTextService {
 			}
 		}
 		topSearchResult.setTopSearchMap(topSearchMap);
+		logger.info("EvaluateTextServiceImpl::searchTopText(): Exit");
 		return topSearchResult;
 	}
 
