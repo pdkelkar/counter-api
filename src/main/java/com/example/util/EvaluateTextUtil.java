@@ -7,11 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -28,7 +24,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.example.constant.EvaluateTextConstant;
-import com.example.service.EvaluateTextServiceImpl;
 /**
  * @author Priyadarshan
  *
@@ -43,7 +38,12 @@ public class EvaluateTextUtil {
 		buildTask1Map();
 		buildTask2Map();
 	}
-		
+	
+	/**
+	 * This utility method loads a file from classpath and converts it into a String
+	 * It also replaces special characters like comma, semicolon, dot with empty Strings
+	 * @return String
+	 */
 	public static String readFileAsString(){
 		logger.info("EvaluateTextUtil::readFileAsString(): Entry");
 		String myFileStr = null ;
@@ -60,6 +60,11 @@ public class EvaluateTextUtil {
 		return myFileStr;
 	}
 
+	/**
+	 * This utility method scans the String and stores unique tokens
+	 * @param myFileStr
+	 * @return Set<String>
+	 */
 	public static Set<String> getUniqueTokenSet(String myFileStr){
 		logger.info("EvaluateTextUtil::getUniqueTokenSet(): Entry");
 		Set<String> tokenSet = new TreeSet<>();
@@ -72,6 +77,11 @@ public class EvaluateTextUtil {
 		return tokenSet;
 	}
 
+	/**
+	 * This utility method builds a static Map containing
+	 * Key - unique token
+	 * Value - count
+	 */
 	private static void buildTask1Map(){
 		logger.info("EvaluateTextUtil::buildTask1Map(): Entry");
 		String myFileStr = readFileAsString();
@@ -88,6 +98,11 @@ public class EvaluateTextUtil {
 		logger.info("EvaluateTextUtil::buildTask1Map(): Exit");
 	}
 	
+	/**
+	 * This utility method builds an ordered(descending) static map containing
+	 * Key - count
+	 * Value - List of unique words having same count
+	 */
 	private static void buildTask2Map(){
 		logger.info("EvaluateTextUtil::buildTask2Map(): Entry");
 		for (Map.Entry<String, Integer> entry : task1Map.entrySet()) {

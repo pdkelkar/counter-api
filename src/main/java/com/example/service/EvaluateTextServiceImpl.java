@@ -27,6 +27,12 @@ public class EvaluateTextServiceImpl implements EvaluateTextService {
 	
 	private static final Logger	logger	= Logger.getLogger(EvaluateTextServiceImpl.class);
 
+	/**
+	 * This service method gets a list of words for which count needs to be determined
+	 * It looks up entry in a Map to check if the word exists as a Key
+	 * If yes, it returns the Value as the count
+	 * If no, it returns zero as the count
+	 */
 	@Override
 	public TextSearchResult searchText(List<String> searchWords) {
 		logger.info("EvaluateTextServiceImpl::searchText(): Entry");
@@ -46,6 +52,10 @@ public class EvaluateTextServiceImpl implements EvaluateTextService {
 		return textSearchResult;
 	}
 
+	/**
+	 * This service method gets the number of top words to search
+	 * It iterates over a Map and returns the all the Keys and Values equal to to the expected count
+	 */
 	@Override
 	public TopSearchResult searchTopText(int searchCnt) {
 		logger.info("EvaluateTextServiceImpl::searchTopText(): Entry");
