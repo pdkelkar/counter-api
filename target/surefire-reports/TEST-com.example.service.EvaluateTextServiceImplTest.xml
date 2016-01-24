@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="1.828" errors="0" skipped="0" tests="2" name="com.example.service.EvaluateTextServiceImplTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin"/>
+    <property name="java.vm.version" value="24.71-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="AU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\CodeTest_Workspace\counter-api"/>
+    <property name="java.runtime.version" value="1.7.0_71-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\CodeTest_Workspace\counter-api"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_71\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="C:\Users\L071987\AppData\Local\Temp\surefirebooter7554126349239814805.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\L071987\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files (x86)\lotus\notes\;C:\Program Files (x86)\oracle\ora92\bin;C:\Program Files (x86)\Oracle\jre\1.3.1\bin;C:\Program Files (x86)\Oracle\jre\1.1.8\bin;C:\Program Files (x86)\Acro Software\CutePDF Writer\;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;%M2_HOME%\bin;C:\Program Files\Java\jdk1.5.0_22\bin;C:\Program Files\TortoiseSVN\bin;C:\Progra~1\Common16;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\HashiCorp\Vagrant\bin;C:\Program Files\Java\jdk1.5.0_22\bin;C:\Program Files (x86)\Git_sparrow\cmd;C:\Program Files (x86)\Git_sparrow\bin;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\x64\;C:\Users\L071987\AppData\Roaming\npm;C:\temp\eclipse_kepler;;."/>
+    <property name="surefire.test.class.path" value="C:\CodeTest_Workspace\counter-api\target\test-classes;C:\CodeTest_Workspace\counter-api\target\classes;C:\BankWow\MavenRepository\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;C:\BankWow\MavenRepository\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\BankWow\MavenRepository\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-core\3.2.4.RELEASE\spring-core-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-web\3.2.4.RELEASE\spring-web-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-aop\3.2.4.RELEASE\spring-aop-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-beans\3.2.4.RELEASE\spring-beans-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-context\3.2.4.RELEASE\spring-context-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-expression\3.2.4.RELEASE\spring-expression-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-webmvc\3.2.4.RELEASE\spring-webmvc-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-test\3.2.4.RELEASE\spring-test-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-core\3.1.0.RELEASE\spring-security-core-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-crypto\3.1.0.RELEASE\spring-security-crypto-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-web\3.1.0.RELEASE\spring-security-web-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-tx\3.0.6.RELEASE\spring-tx-3.0.6.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-jdbc\3.0.6.RELEASE\spring-jdbc-3.0.6.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-config\3.1.0.RELEASE\spring-security-config-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;C:\BankWow\MavenRepository\repository\junit\junit\4.11\junit-4.11.jar;C:\BankWow\MavenRepository\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\BankWow\MavenRepository\repository\org\codehaus\jackson\jackson-mapper-asl\1.9.12\jackson-mapper-asl-1.9.12.jar;C:\BankWow\MavenRepository\repository\org\codehaus\jackson\jackson-core-asl\1.9.12\jackson-core-asl-1.9.12.jar;C:\BankWow\MavenRepository\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\BankWow\MavenRepository\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="H:"/>
+    <property name="user.timezone" value="Australia/Sydney"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="L071987"/>
+    <property name="java.class.path" value="C:\CodeTest_Workspace\counter-api\target\test-classes;C:\CodeTest_Workspace\counter-api\target\classes;C:\BankWow\MavenRepository\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar;C:\BankWow\MavenRepository\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\BankWow\MavenRepository\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-core\3.2.4.RELEASE\spring-core-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-web\3.2.4.RELEASE\spring-web-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-aop\3.2.4.RELEASE\spring-aop-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-beans\3.2.4.RELEASE\spring-beans-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-context\3.2.4.RELEASE\spring-context-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-expression\3.2.4.RELEASE\spring-expression-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-webmvc\3.2.4.RELEASE\spring-webmvc-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-test\3.2.4.RELEASE\spring-test-3.2.4.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-core\3.1.0.RELEASE\spring-security-core-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-crypto\3.1.0.RELEASE\spring-security-crypto-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-web\3.1.0.RELEASE\spring-security-web-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-tx\3.0.6.RELEASE\spring-tx-3.0.6.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\spring-jdbc\3.0.6.RELEASE\spring-jdbc-3.0.6.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\springframework\security\spring-security-config\3.1.0.RELEASE\spring-security-config-3.1.0.RELEASE.jar;C:\BankWow\MavenRepository\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;C:\BankWow\MavenRepository\repository\junit\junit\4.11\junit-4.11.jar;C:\BankWow\MavenRepository\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\BankWow\MavenRepository\repository\org\codehaus\jackson\jackson-mapper-asl\1.9.12\jackson-mapper-asl-1.9.12.jar;C:\BankWow\MavenRepository\repository\org\codehaus\jackson\jackson-core-asl\1.9.12\jackson-core-asl-1.9.12.jar;C:\BankWow\MavenRepository\repository\log4j\log4j\1.2.14\log4j-1.2.14.jar;C:\BankWow\MavenRepository\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_71\jre"/>
+    <property name="sun.java.command" value="C:\Users\L071987\AppData\Local\Temp\surefirebooter7554126349239814805.jar C:\Users\L071987\AppData\Local\Temp\surefire6450756623077061187tmp C:\Users\L071987\AppData\Local\Temp\surefire774912850437749968tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_71"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_71\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_71\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_71\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="C:\BankWow\MavenRepository\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="1.812" classname="com.example.service.EvaluateTextServiceImplTest" name="testSearchText"/>
+  <testcase time="0" classname="com.example.service.EvaluateTextServiceImplTest" name="testSearchTopText"/>
+</testsuite>
